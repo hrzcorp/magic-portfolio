@@ -35,7 +35,9 @@ jobs:
           composer install --no-progress --prefer-dist --optimize-autoloader
           php -v
       - name: Install npm Packages
-        run: npm ci
+        run: |
+          cd magic-portfolio
+          npm ci
       - name: Generate Application Key
         run: |
           cd magic-portfolio
