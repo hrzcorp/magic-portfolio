@@ -17,7 +17,9 @@ jobs:
           node-version: '18'  # Choose your preferred Node.js version
           
       - name: Prepare The Environment
-        run: cp .env.example .env
+        run: |
+          cd magic-portfolio
+          cp .env.example .env
     #   - name: Create Database
     #     run: |
     #       sudo systemctl start mysql
