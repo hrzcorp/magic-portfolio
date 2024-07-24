@@ -15,7 +15,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'  # Choose your preferred Node.js version
-          
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: imagick, swoole    
       - name: Prepare The Environment
         run: |
           cd magic-portfolio
