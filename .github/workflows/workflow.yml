@@ -26,23 +26,34 @@ jobs:
     #       mysql --user="root" --password="root" -e "CREATE DATABASE \`harizcor_bhirawatour_test\` character set UTF8mb4 collate utf8mb4_bin;"
       - name: Install Composer Dependencies
         run: |
+          cd magic-portfolio
           composer update
           composer install --no-progress --prefer-dist --optimize-autoloader
           php -v
       - name: Install npm Packages
         run: npm ci
       - name: Generate Application Key
-        run: php artisan key:generate
+        run: |
+          cd magic-portfolio
+          php artisan key:generate
       - name: Upgrade Chrome Driver
-        run: php artisan dusk:chrome-driver --detect
+        run: |
+          cd magic-portfolio
+          php artisan dusk:chrome-driver --detect
       - name: Start Chrome Driver
-        run: ./vendor/laravel/dusk/bin/chromedriver-linux &
+        run: |
+          cd magic-portfolio
+          ./vendor/laravel/dusk/bin/chromedriver-linux &
       - name: Run Laravel Server
-        run: php artisan serve --no-reload &
+        run: |
+          cd magic-portfolio
+          php artisan serve --no-reload &
       - name: Run npm
         run: LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
       - name: Run Dusk Tests
-        run: php artisan dusk
+        run: |
+          cd magic-portfolio
+          php artisan dusk
       - name: Upload Screenshots
         if: failure()
         uses: actions/upload-artifact@v2
