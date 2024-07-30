@@ -1,3 +1,3 @@
 <x-layouts-app>
-    <x-navbar />
+    <x-navbar :navItems="$navItems" />
 </x-layouts-app>
