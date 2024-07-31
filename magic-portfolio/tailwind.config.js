@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         sans: ['Lexend', ...defaultTheme.fontFamily.sans],
         satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
+        outfit:['Outfit', ...defaultTheme.fontFamily.sans]
       },
     },
     screens: {
