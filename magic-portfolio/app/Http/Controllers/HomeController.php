@@ -69,6 +69,6 @@ class HomeController extends Controller
         ];
 
         return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials'))->with('title', 'HOME');
-        
+
     }
 }
