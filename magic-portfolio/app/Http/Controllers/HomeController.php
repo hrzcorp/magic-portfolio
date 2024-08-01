@@ -15,7 +15,7 @@ class HomeController extends Controller
             ['name' => 'Pages', 'url' => '#'],
             ['name' => 'Contact', 'url' => '#'],
         ];
-
+      
         $footerNavItems = [
             'Company' => [
                 ['name' => 'Home', 'url' => '#'],
@@ -36,7 +36,7 @@ class HomeController extends Controller
             ]
         ];
 
-        return view('home', compact('navItems', 'footerNavItems'));
+        return view('home', compact('navItems', 'footerNavItems'))->with('title', 'HOME');
         
     }
 }
