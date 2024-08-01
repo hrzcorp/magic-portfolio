@@ -1,6 +1,5 @@
 <x-layouts-app :title="$title">
     <x-navbar :navItems="$navItems" />
-
     <div class="container mx-auto py-40 grid grid-cols-2 gap-7">
         @foreach ($benefits as $benefit)
             <x-card-benefit 
