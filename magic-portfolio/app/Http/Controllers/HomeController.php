@@ -15,7 +15,6 @@ class HomeController extends Controller
             ['name' => 'Pages', 'url' => '#'],
             ['name' => 'Contact', 'url' => '#'],
         ];
-        return view('home', compact('navItems'));
-        
+        return view('home', compact('navItems'))->with('title', 'HOME');
     }
 }
