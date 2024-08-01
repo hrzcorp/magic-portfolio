@@ -11,6 +11,7 @@ export default {
       container: true,
       fontFamily: {
         sans: ['Lexend', ...defaultTheme.fontFamily.sans],
+        satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
     },
     screens: {
