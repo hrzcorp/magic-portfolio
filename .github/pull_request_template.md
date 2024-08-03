@@ -1,4 +1,3 @@
-Fixes # {TICKET-ID} - {Ticket Title}
 ## PR Type
 
 - [ ] New Feature
@@ -22,3 +21,7 @@ Fixes # {TICKET-ID} - {Ticket Title}
 ## Related Reference
 
 <!-- Put Related Reference Link -->
+
+## Screenshot Fx/Feature
+
+<!-- Put Screenshot Image -->
