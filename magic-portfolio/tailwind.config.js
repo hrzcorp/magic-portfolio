@@ -8,7 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      container: true,
+      container: {
+        center: true,
+      },
       fontFamily: {
         sans: ['Lexend', ...defaultTheme.fontFamily.sans],
         satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
