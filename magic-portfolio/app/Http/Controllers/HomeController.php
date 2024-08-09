@@ -38,23 +38,29 @@ class HomeController extends Controller
 
         $benefits = [
             [
-            'logo' => '<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 18a6 6 0 110-12 6 6 0 010 12z" fill="#000"/>
-                  </svg>',
-            'text' => 'Full responsibility for the whole recruitment process'
+                'logo' => 'images/images-1.png',
+                'text' => 'Full responsibility for the whole recruitment process'
             ],
             [
-                'logo' => '<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 18a6 6 0 110-12 6 6 0 010 12z" fill="#000"/>
-                      </svg>',
+                'logo' => 'images/images-4.png',
+                'text' => 'Success fee - we will not charge you until you hire'
+            ],
+            [
+                'logo' => 'images/images-2.png',
+                'text' => 'We ensure transparancy at all stages of recruitment'
+            ],
+            [
+                'logo' => 'images/images-5.png',
+                'text' => 'We will adapt the cooperation model'
+            ],
+            [
+                'logo' => 'images/images-3.png',
                 'text' => 'Full responsibility for the whole recruitment process'
-                ],
-                [
-                    'logo' => '<svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 18a6 6 0 110-12 6 6 0 010 12z" fill="#000"/>
-                          </svg>',
-                    'text' => 'Full responsibility for the whole recruitment process'
-                    ],
+            ],
+            [
+                'logo' => 'images/images-6.png',
+                'text' => 'Full responsibility for the whole recruitment process'
+            ],
 
         ];
 
