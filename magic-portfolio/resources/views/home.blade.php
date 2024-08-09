@@ -1,15 +1,8 @@
 <x-layouts-app :title="$title">
     <x-navbar :navItems="$navItems" />
-    {{-- <div class="container grid grid-cols-2 py-40 gap-7">
-        @foreach ($benefits as $benefit)
-            <x-card-benefit 
-                :logo="$benefit['logo']"
-                :text="$benefit['text']"
-            />
-        @endforeach
-    </div>
+    
 
-    <div class="container px-4 py-10">
+    {{-- <div class="container px-4 py-10">
         @foreach($testimonials as $testimonial)
             <x-card-testimony
                 :name="$testimonial['name']"
@@ -68,9 +61,27 @@
         </div>
     </section>
     
+    <section class="container flex justify-center bg-[#373BD7] px-6 py-6 md:px-[118px] md:py-[109px] rounded-3xl md:rounded-[120px] my-5 sm:my-24">
+        <h1 class="text-3xl font-bold tracking-tight xl:leading-[4.5rem] text-center text-white font-satoshi max-w-[915px] lg:text-6xl">
+            How does the recruitment process look like?
+        </h1>
+    </section>
     
-    
-    
+    <section class="container mb-[153px]">
+        <h1 class="mb-[113px] text-3xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi max-w-screen-md lg:text-6xl">
+            What you get with Allhire recruitment process?
+        </h1>
+        <div class="grid lg:grid-cols-2 gap-y-11">
+            @foreach ($benefits as $benefit)
+                <div class="{{ $loop->index % 2 == 0 ? 'mr-auto' : 'ml-auto' }}">
+                    <x-card-benefit 
+                        :logo="$benefit['logo']"
+                        :text="$benefit['text']"
+                    />
+                </div>
+            @endforeach
+        </div>
+    </section>
 
     <x-footer :footerNavItems="$footerNavItems"/>
 </x-layouts-app>

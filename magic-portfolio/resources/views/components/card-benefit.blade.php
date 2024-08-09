@@ -3,7 +3,7 @@
 <div style="box-shadow: 10px 10px 40px 0px rgba(34, 46, 111, 0.1);" class="max-w-[532px] px-8 py-9 flex items-center justify-between p-4 bg-white rounded-xl border border-[#E1EDED]">
     <div class="flex items-center">
         <div class="w-[52px] h-[52px]">
-            {!! $logo !!}
+            <img src="{{ $logo }}" alt="">
         </div>
         <p class="font-satoshi text-lg font-bold ml-6 max-w-80">{{ $text }}</p>
     </div>
