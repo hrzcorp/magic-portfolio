@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ env('APP_NAME') }} - {{ $title ?? '' }}</title>
     @vite('resources/css/app.css')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     {{ $slot }}

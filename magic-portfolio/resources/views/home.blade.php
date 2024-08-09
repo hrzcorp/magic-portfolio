@@ -44,7 +44,33 @@
             </div>
         </div>
     </section>
-    
+
     <x-sponsor/>
+
+    <section class="container px-6 pb-24 relative overflow-hidden border-0">
+        <div class="flex flex-col items-center lg:gap-[104px] gap-12 lg:flex-row">
+            <div class="max-w-[483px] pt-14">
+                <h1 class="mb-6 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
+                    Who are we and what we do
+                </h1>
+                <p class="text-lg font-normal xl:leading-8 lg:text-xl text-[#737373]">
+                    We understand recruiting is a difficult and time-consuming process. Our service offers integrated solutions that combine the power of video, tools, workflows, analytics, and feedback collaboration to optimize the hiring process.
+                </p>
+            </div>
+            <div>
+                <div class="lg:absolute top-0 right-0 h-auto z-0">
+                    <img src="images/decor-blue.png" alt="Interaction Image">
+                </div>
+                <div class="flex justify-center hp:justify-end bottom-2 xl:right-64 lg:z-10 hp:absolute">
+                    <x-chart/>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+
     <x-footer :footerNavItems="$footerNavItems"/>
 </x-layouts-app>
