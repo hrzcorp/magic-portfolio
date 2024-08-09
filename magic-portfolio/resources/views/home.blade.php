@@ -82,7 +82,6 @@
             @endforeach
         </div>
     </section>
-    
 
     <x-footer :footerNavItems="$footerNavItems"/>
 </x-layouts-app>
