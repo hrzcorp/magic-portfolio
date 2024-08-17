@@ -1,18 +1,5 @@
 <x-layouts-app :title="$title">
     <x-navbar :navItems="$navItems" />
-    
-
-    {{-- <div class="container px-4 py-10">
-        @foreach($testimonials as $testimonial)
-            <x-card-testimony
-                :name="$testimonial['name']"
-                :username="$testimonial['username']"
-                :profileImage="$testimonial['profileImage']"
-                :message="$testimonial['message']"
-                :timestamp="$testimonial['timestamp']"
-            />
-        @endforeach
-    </div> --}}
 
     <section class="relative bg-[#373BD7] text-white overflow-hidden border-0 rounded-b-3xl lg:rounded-b-[120px]">
         <div class="container px-6 py-12 lg:px-0 lg:pt-24 pb-36 lg:pb-[302px]">
@@ -67,7 +54,7 @@
         </h1>
     </section>
     
-    <section class="container mb-[153px]">
+    <section class="container px-6 mb-[153px]">
         <h1 class="mb-[113px] text-3xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi max-w-screen-md lg:text-6xl">
             What you get with Allhire recruitment process?
         </h1>
@@ -82,7 +69,76 @@
             @endforeach
         </div>
     </section>
-    
+
+    <section class="bg-[#F8FAFC] px-6 pt-[90px] pb-[78px] rounded-[120px]">
+        <div class="container relative">
+            <h1 class="font-satoshi font-bold text-center max-w-2xl mx-auto text-3xl tracking-tight xl:leading-[4.5rem] lg:text-6xl">What our client think about us?</h1>
+            <div class="slider-testimonial my-16">
+                @foreach($testimonials as $testimonial)
+                <div>
+                    <x-card-testimony class="slide"
+                        :name="$testimonial['name']"
+                        :username="$testimonial['username']"
+                        :profileImage="$testimonial['profileImage']"
+                        :message="$testimonial['message']"
+                        :timestamp="$testimonial['timestamp']"
+                    />
+                </div>
+                @endforeach
+            </div>
+
+            <div class="absolute -top-[90px] right-24">
+                <svg width="680" height="680" viewBox="0 0 680 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.226198 679.453C89.4235 679.453 177.747 661.884 260.155 627.75C342.562 593.615 417.44 543.584 480.512 480.512C543.584 417.44 593.615 342.562 627.749 260.155C661.884 177.747 679.452 89.4236 679.452 0.226318L467.635 0.226309C467.635 61.6072 455.545 122.387 432.055 179.096C408.566 235.804 374.137 287.331 330.734 330.734C287.331 374.137 235.804 408.566 179.096 432.055C122.387 455.545 61.6071 467.635 0.226207 467.635L0.226198 679.453Z" fill="url(#paint0_linear_1_756)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_1_756" x1="596.726" y1="0.226296" x2="126.175" y2="490.529" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#373BD7" stop-opacity="0.13"/>
+                    <stop offset="1" stop-color="white" stop-opacity="0"/>
+                    </linearGradient>
+                    </defs>
+                </svg>                  
+            </div>
+
+            <div class="absolute -top-[90px] right-[308px]">
+                <svg width="680" height="680" viewBox="0 0 680 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.226198 679.453C89.4235 679.453 177.747 661.884 260.155 627.75C342.562 593.615 417.44 543.584 480.512 480.512C543.584 417.44 593.615 342.562 627.749 260.155C661.884 177.747 679.452 89.4236 679.452 0.226318L467.635 0.226309C467.635 61.6072 455.545 122.387 432.055 179.096C408.566 235.804 374.137 287.331 330.734 330.734C287.331 374.137 235.804 408.566 179.096 432.055C122.387 455.545 61.6071 467.635 0.226207 467.635L0.226198 679.453Z" fill="url(#paint0_linear_1_755)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_1_755" x1="596.726" y1="0.226296" x2="126.175" y2="490.529" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#373BD7" stop-opacity="0.13"/>
+                    <stop offset="1" stop-color="white" stop-opacity="0"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var slider = tns({
+                container: '.slider-testimonial',
+                items: 3,
+                speed: 300,
+                autoplay: true,
+                autoplayHoverPause: true,
+                autoplayTimeout: 3500,
+                swipeAngle: false,
+                autoplayButtonOutput: false,
+                controls: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    640: {
+                        items: 2,
+                    },
+                    1024: {
+                        items: 3,
+                    }
+                }
+            });
+        });
+    </script>
 
     <x-footer :footerNavItems="$footerNavItems"/>
 </x-layouts-app>
