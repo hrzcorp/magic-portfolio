@@ -25,7 +25,6 @@
         </div>
     </section>
 
-
     <x-sponsor/>
 
     <section class="container px-6 pb-24 relative overflow-hidden border-0">
