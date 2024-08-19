@@ -137,7 +137,70 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials'))->with('title', 'HOME');
+        $workfolios = [
+            [
+                'url' => '#',
+                'title' => 'Indosat Ooredo',
+                'image' => 'images/porto-1.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'developer'
+                ]
+            ],
+            [
+                'url' => '#',
+                'title' => 'Pharmachy Organization',
+                'image' => 'images/porto-2.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
+            ],
+            [
+                'url' => '#',
+                'title' => 'Tech Insurance',
+                'image' => 'images/porto-3.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'nodejs'
+                ]
+            ],
+            [
+                'url' => '#',
+                'title' => 'Indosat Ooredo',
+                'image' => 'images/porto-1.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
+            ],
+            [
+                'url' => '#',
+                'title' => 'Pharmachy Organization',
+                'image' => 'images/porto-2.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
+            ],
+            [
+                'url' => '#',
+                'title' => 'Tech Insurance',
+                'image' => 'images/porto-3.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'nodejs'
+                ]
+            ],
+        ];
+
+        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'HOME');
 
     }
 }
