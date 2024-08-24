@@ -26,3 +26,7 @@ Complete PR Template and Add @afifhrz as the reviewer
 PSR Standard - https://www.php-fig.org/psr/psr-2/
 
 ![alt text](image.png)
+
+## Database Design
+You could found the design of database through this link.
+https://dbdiagram.io/d/magic-portfolio-66b57ee68b4bb5230ea4994b
