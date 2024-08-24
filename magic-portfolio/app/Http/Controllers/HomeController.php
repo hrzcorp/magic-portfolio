@@ -68,7 +68,70 @@ class HomeController extends Controller
             [
                 'name' => 'Marjorie',
                 'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'Albert Flores',
+                'username' => '@Albertflores',
+                'profileImage' => 'images/photo-profil-2.png',
+                'message' => 'Working with AllHire was a game-changer for our organization. Their professionalism and expertise made the recruitment process seamless and efficient. We found our ideal candidate thanks to their exceptional service.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'C',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, ',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'D',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'E',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'F',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'G',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'H',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'I',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
+                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'J',
+                'username' => '@monstermash',
+                'profileImage' => 'images/photo-profil-1.png',
                 'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
                 'timestamp' => '23 April • 8:13 AM'
             ],
