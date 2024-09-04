@@ -25,6 +25,7 @@
         </div>
     </section>
 
+
     <x-sponsor/>
 
     <section class="container px-6 pb-24 relative overflow-hidden border-0">
@@ -47,7 +48,32 @@
             </div>
         </div>
     </section>
-    
+
+    <section id="autoplay_wrapper" class="container relative">
+        <div class="slider-workfolio py-10" id="autoplay">
+            @foreach ($workfolios as $workfolio )
+            <div>
+                <a href="{{$workfolio['url']}}" class="max-w-sm h-[430px] mx-4 shadow-lg rounded-lg overflow-hidden block">
+                    <img src="{{$workfolio['image']}}" alt="Fullstack Developer" class="w-full h-56 object-cover object-center" />
+                    <div class="p-4">
+                    <h2 class="text-2xl font-bold text-[#373BD7]">{{$workfolio['title']}}</h2>
+                    <p class=" mt-2">{{$workfolio['description']}}</p>
+                    <div class="mt-4">
+                        @foreach ($workfolio['tag'] as $i => $tag)
+                            @if ($i <= 0)
+                                <span class="bg-[#373BD7] text-white px-2 py-1 rounded-full text-sm">{{ $tag }}</span>
+                            @else
+                                <span class="border border-[#373BD7]  px-2 py-1 rounded-full text-sm ml-2">{{ $tag }}</span>
+                            @endif
+                        @endforeach
+                    </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </section>
+
     <section class="container flex justify-center bg-[#373BD7] px-6 py-6 md:px-[118px] md:py-[109px] rounded-3xl md:rounded-[120px] my-5 sm:my-24">
         <h1 class="text-3xl font-bold tracking-tight xl:leading-[4.5rem] text-center text-white font-satoshi max-w-[915px] lg:text-6xl">
             How does the recruitment process look like?
@@ -192,29 +218,56 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var slider = tns({
-                container: '.slider-testimonial',
-                items: 3,
-                speed: 300,
-                autoplay: true,
-                autoplayHoverPause: true,
-                autoplayTimeout: 3500,
-                swipeAngle: false,
-                autoplayButtonOutput: false,
-                controls: false,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    640: {
-                        items: 2,
-                    },
-                    1024: {
-                        items: 3,
-                    }
+        // Slider untuk testimonial
+        var testimonialSlider = tns({
+            container: '.slider-testimonial',
+            items: 3,
+            speed: 300,
+            autoplay: true,
+            autoplayHoverPause: true,
+            autoplayTimeout: 3500,
+            swipeAngle: false,
+            autoplayButtonOutput: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                640: {
+                    items: 2,
+                },
+                1024: {
+                    items: 3,
                 }
-            });
+            }
         });
+
+        // Slider untuk workfolio
+        var workfolioSlider = tns({
+            "container": "#autoplay",
+            "items": 3,
+            "speed": 300,
+            "autoplay": true,
+            "autoplayHoverPause": true,
+            "autoplayTimeout": 3500,
+            "swipeAngle": false,
+            autoplayButtonOutput: false,
+            controls: false,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                640: {
+                    items: 2,
+                },
+                1024: {
+                    items: 3,
+                }
+            }
+        });
+    });
+
     </script>
 
     <x-footer :footerNavItems="$footerNavItems"/>
