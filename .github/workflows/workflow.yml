@@ -55,7 +55,9 @@ jobs:
           cd magic-portfolio
           php artisan serve --no-reload &
       - name: Run npm
-        run: LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
+        run: |
+          cd magic-portfolio
+          LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
       - name: Run Dusk Tests
         run: |
           cd magic-portfolio
