@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class HomeController extends Controller
+class HomeController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            // Note: this is example of permission middleware. Use this later for specified route. 
+            // This permission required authentication of user
+            // new Middleware(\Spatie\Permission\Middleware\PermissionMiddleware::using('read-post'), only: ['index']),
+        ];
+    }
+
     public function index()
     {
         $navItems = [
