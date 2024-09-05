@@ -135,72 +135,72 @@ class HomeController extends Controller
                 'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
                 'timestamp' => '23 April • 8:13 AM'
             ],
+        ];
+
+        $workfolios = [
             [
-                'name' => 'Albert Flores',
-                'username' => '@Albertflores',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'Working with AllHire was a game-changer for our organization. Their professionalism and expertise made the recruitment process seamless and efficient. We found our ideal candidate thanks to their exceptional service.',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Indosat Ooredo',
+                'image' => 'images/porto-1.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'developer'
+                ]
             ],
             [
-                'name' => 'C',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, ',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Pharmachy Organization',
+                'image' => 'images/porto-2.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
             ],
             [
-                'name' => 'D',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Tech Insurance',
+                'image' => 'images/porto-3.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'nodejs'
+                ]
             ],
             [
-                'name' => 'E',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Indosat Ooredo',
+                'image' => 'images/porto-1.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
             ],
             [
-                'name' => 'F',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Pharmachy Organization',
+                'image' => 'images/porto-2.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'fullstack', 
+                    'developer'
+                ]
             ],
             [
-                'name' => 'G',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'H',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'I',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'J',
-                'username' => '@monstermash',
-                'profileImage' => 'path/to/profile-image.jpg',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
+                'url' => '#',
+                'title' => 'Tech Insurance',
+                'image' => 'images/porto-3.png',
+                'description' => 'Passionate about building robust web applications.',
+                'tag' => [
+                    'laravel', 
+                    'nodejs'
+                ]
             ],
         ];
 
-        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials'))->with('title', 'HOME');
+        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'HOME');
 
     }
 }
