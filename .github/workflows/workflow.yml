@@ -49,7 +49,7 @@ jobs:
       - name: Start Chrome Driver
         run: |
           cd magic-portfolio
-          ./vendor/laravel/dusk/bin/chromedriver-linux --port=9515
+          ./vendor/laravel/dusk/bin/chromedriver-linux --port=9515 &
       - name: Run Laravel Server
         run: |
           cd magic-portfolio
