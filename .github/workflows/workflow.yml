@@ -1,5 +1,5 @@
 name: Integration Test
-on: [push]
+on: [pull_request]
 jobs:
  
   dusk-php:
@@ -49,13 +49,15 @@ jobs:
       - name: Start Chrome Driver
         run: |
           cd magic-portfolio
-          ./vendor/laravel/dusk/bin/chromedriver-linux &
+          ./vendor/laravel/dusk/bin/chromedriver-linux --port=9515 &
       - name: Run Laravel Server
         run: |
           cd magic-portfolio
           php artisan serve --no-reload &
       - name: Run npm
-        run: LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
+        run: |
+          cd magic-portfolio
+          LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
       - name: Run Dusk Tests
         run: |
           cd magic-portfolio

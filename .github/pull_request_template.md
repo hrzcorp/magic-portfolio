@@ -22,6 +22,6 @@
 
 <!-- Put Related Reference Link -->
 
-## Screenshot Fx/Feature
+## Screenshot Fix/Feature
 
 <!-- Put Screenshot Image -->

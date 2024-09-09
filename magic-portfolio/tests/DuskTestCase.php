@@ -15,12 +15,12 @@ abstract class DuskTestCase extends BaseTestCase
      * Prepare for Dusk test execution.
      */
     #[BeforeClass]
-    public static function prepare(): void
-    {
-        if (! static::runningInSail()) {
-            static::startChromeDriver();
-        }
-    }
+    // public static function prepare(): void
+    // {
+    //     if (! static::runningInSail()) {
+    //         static::startChromeDriver();
+    //     }
+    // }
 
     /**
      * Create the RemoteWebDriver instance.
