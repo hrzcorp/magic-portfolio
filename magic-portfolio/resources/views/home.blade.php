@@ -6,13 +6,13 @@
             <div class="flex flex-col items-center gap-12 lg:flex-row">
                 <div class="flex-1">
                     <h1 class="mb-8 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
-                        We will handle the recruitment process for you
+                        Welcome to HRZ Indonesia!
                     </h1>
                     <p class="mb-12 text-lg font-normal xl:leading-8 lg:text-xl max-w-[486px]">
-                        We make the hiring process more effective and more efficient.
+                        Providing comprehensive website and software solutions for your business needs.
                     </p>
                     <x-button-secondary class="flex gap-[10px]">
-                        Contact Us and Start Recruitment
+                        Contact Us and Start Build App!
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.3 17.275C13.1 17.075 13.004 16.8334 13.012 16.55C13.02 16.2667 13.1243 16.025 13.325 15.825L16.15 13H5C4.71667 13 4.479 12.904 4.287 12.712C4.095 12.52 3.99934 12.2827 4 12C4 11.7167 4.096 11.479 4.288 11.287C4.48 11.095 4.71734 10.9994 5 11H16.15L13.3 8.15005C13.1 7.95005 13 7.71238 13 7.43705C13 7.16172 13.1 6.92438 13.3 6.72505C13.5 6.52505 13.7377 6.42505 14.013 6.42505C14.2883 6.42505 14.5257 6.52505 14.725 6.72505L19.3 11.3C19.4 11.4 19.471 11.5084 19.513 11.625C19.555 11.7417 19.5757 11.8667 19.575 12C19.575 12.1334 19.554 12.2584 19.512 12.375C19.47 12.4917 19.3993 12.6 19.3 12.7L14.7 17.3C14.5167 17.4834 14.2877 17.575 14.013 17.575C13.7383 17.575 13.5007 17.475 13.3 17.275Z" fill="#373BD7"/>
                         </svg>                            
@@ -35,7 +35,7 @@
                     Who are we and what we do
                 </h1>
                 <p class="text-lg font-normal xl:leading-8 lg:text-xl text-[#737373]">
-                    We understand recruiting is a difficult and time-consuming process. Our service offers integrated solutions that combine the power of video, tools, workflows, analytics, and feedback collaboration to optimize the hiring process.
+                    HRZ Indonesia is a leading provider of web and software solutions designed to help businesses thrive in today's digital landscape. Our team of experts specializes in creating custom solutions tailored to meet your unique requirements.
                 </p>
             </div>
             <div>
@@ -76,13 +76,13 @@
 
     <section class="container flex justify-center bg-[#373BD7] px-6 py-6 md:px-[118px] md:py-[109px] rounded-3xl md:rounded-[120px] my-5 sm:my-24">
         <h1 class="text-3xl font-bold tracking-tight xl:leading-[4.5rem] text-center text-white font-satoshi max-w-[915px] lg:text-6xl">
-            How does the recruitment process look like?
+            How does the development process look like?
         </h1>
     </section>
     
     <section class="container px-6 mb-[153px]">
         <h1 class="mb-[113px] text-3xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi max-w-screen-md lg:text-6xl">
-            What you get with Allhire recruitment process?
+            What you get with HRZ Indonesia solutions?
         </h1>
         <div class="grid lg:grid-cols-2 gap-y-11">
             @foreach ($benefits as $benefit)
@@ -143,22 +143,22 @@
         <div class="container flex pt-56 pb-32 flex-col lg:flex-row justify-between items-center">
           <div class="mb-8 max-w-[482px]">
             <h2 class="text-xl font-medium">Contact us</h2>
-            <h3 class="text-2xl md:text-5xl font-satoshi font-bold xl:leading-[4rem] pt-6">Any questions? Write or call us.<br> We will write back within 12h</h3>
+            <h3 class="text-2xl md:text-5xl font-satoshi font-bold xl:leading-[4rem] pt-6">Ready to take your business to the next level?</h3>
             <p class="my-7 text-sm md:text-base font-medium">
-              Lorem ipsum dolor sit amet consectetur. Massa enim auctor aliquet proin convallis sed consectetur. Purus diam ultrices consectetur volutpat ut commodo leo ultrices velit.
+                Contact us today to discuss your project and see how we can help!
             </p>
             <div class="hp:flex items-center justify-between">
               <p class="flex items-center gap-[14px] text-sm md:text-base">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.2638 16.7644L16.2371 13.1032C16.0467 12.9302 15.7966 12.8379 15.5395 12.8459C15.2824 12.8538 15.0384 12.9614 14.8591 13.1458L12.4886 15.5836C11.9181 15.4747 10.7709 15.1171 9.59015 13.9393C8.40936 12.7575 8.05175 11.6074 7.94576 11.0408L10.3816 8.66932C10.5663 8.49015 10.674 8.24616 10.682 7.98899C10.6899 7.73182 10.5975 7.48164 10.4242 7.29141L6.76398 3.26565C6.59066 3.07482 6.34979 2.95907 6.0925 2.94297C5.83522 2.92688 5.58179 3.01172 5.38605 3.17947L3.23646 5.02296C3.06519 5.19484 2.96297 5.4236 2.94918 5.66585C2.93432 5.9135 2.65101 11.7798 7.19984 16.3305C11.1682 20.2979 16.139 20.5881 17.508 20.5881C17.7081 20.5881 17.8309 20.5822 17.8636 20.5802C18.1058 20.5666 18.3345 20.4639 18.5055 20.2919L20.3481 18.1413C20.5165 17.9462 20.6019 17.693 20.5862 17.4357C20.5705 17.1785 20.4548 16.9376 20.2638 16.7644Z" fill="white"/>
                 </svg>                    
-                +1 342 332 338
+                +62 857 3586 8483
               </p>
               <p class="flex items-center gap-[14px] text-sm md:text-base">
                 <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.6031 0.411743H3.2208C2.46025 0.411743 1.73085 0.7313 1.19306 1.30011C0.655276 1.86893 0.353149 2.64041 0.353149 3.44483V13.5551C0.353149 14.3596 0.655276 15.131 1.19306 15.6998C1.73085 16.2687 2.46025 16.5882 3.2208 16.5882H16.6031C17.3637 16.5882 18.0931 16.2687 18.6309 15.6998C19.1687 15.131 19.4708 14.3596 19.4708 13.5551V3.44483C19.4708 2.64041 19.1687 1.86893 18.6309 1.30011C18.0931 0.7313 17.3637 0.411743 16.6031 0.411743ZM15.9627 2.4338L9.91197 7.23619L3.86124 2.4338H15.9627ZM16.6031 14.5662H3.2208C2.96728 14.5662 2.72415 14.4596 2.54489 14.27C2.36562 14.0804 2.26491 13.8233 2.26491 13.5551V3.69759L9.33844 9.3088C9.5039 9.44006 9.70515 9.51101 9.91197 9.51101C10.1188 9.51101 10.32 9.44006 10.4855 9.3088L17.559 3.69759V13.5551C17.559 13.8233 17.4583 14.0804 17.2791 14.27C17.0998 14.4596 16.8567 14.5662 16.6031 14.5662Z" fill="white"/>
                 </svg>                    
-                info@allhire.com
+                info@hrzcorp.com
               </p>
             </div>
           </div>
