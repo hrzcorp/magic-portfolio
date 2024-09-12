@@ -13,7 +13,7 @@
     </nav>
 
     <x-button-secondary class="hidden lg:inline-block">
-      Start Free Trial
+      Start Build App
     </x-button-secondary>
 
     <x-hamburger-menu class="block lg:hidden" />
@@ -41,7 +41,7 @@
           @endforeach
         </ul>
         <x-button-secondary>
-          Start Free Trial
+          Start Build App
         </x-button-secondary>
       </nav>
     </div>
