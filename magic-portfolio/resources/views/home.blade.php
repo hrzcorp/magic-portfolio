@@ -2,7 +2,7 @@
     <x-navbar :navItems="$navItems" />
 
     <section class="relative bg-[#373BD7] text-white overflow-hidden border-0 rounded-b-3xl lg:rounded-b-[120px]">
-        <div class="container px-6 py-12 lg:px-0 lg:pt-24 pb-36 lg:pb-[302px]">
+        <div class="container px-6 py-12 lg:px-0 lg:pt-6 pb-12 lg:pb-12">
             <div class="flex flex-col items-center gap-12 lg:flex-row">
                 <div class="flex-1">
                     <h1 class="mb-8 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
@@ -25,10 +25,9 @@
         </div>
     </section>
 
+    {{-- <x-sponsor/> --}}
 
-    <x-sponsor/>
-
-    <section class="container px-6 pb-24 relative overflow-hidden border-0">
+    <section class="container px-6 pb-24 mt-6 relative overflow-hidden border-0">
         <div class="flex flex-col items-center lg:gap-[104px] gap-12 lg:flex-row">
             <div class="max-w-[483px] pt-14">
                 <h1 class="mb-6 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
@@ -76,14 +75,15 @@
 
     <section class="container flex justify-center bg-[#373BD7] px-6 py-6 md:px-[118px] md:py-[109px] rounded-3xl md:rounded-[120px] my-5 sm:my-24">
         <h1 class="text-3xl font-bold tracking-tight xl:leading-[4.5rem] text-center text-white font-satoshi max-w-[915px] lg:text-6xl">
-            How does the development process look like?
+            {{-- How does the development process look like? --}}
+            What you get with HRZ Indonesia solutions?
         </h1>
     </section>
     
     <section class="container px-6 mb-[153px]">
-        <h1 class="mb-[113px] text-3xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi max-w-screen-md lg:text-6xl">
+        {{-- <h1 class="mb-[113px] text-3xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi max-w-screen-md lg:text-6xl">
             What you get with HRZ Indonesia solutions?
-        </h1>
+        </h1> --}}
         <div class="grid lg:grid-cols-2 gap-y-11">
             @foreach ($benefits as $benefit)
                 <div class="{{ $loop->index % 2 == 0 ? 'mr-auto' : 'ml-auto' }}">
