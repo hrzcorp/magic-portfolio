@@ -12,9 +12,9 @@
       @endforeach
     </nav>
 
-    <x-button-secondary class="hidden lg:inline-block">
+    {{-- <x-button-secondary class="hidden lg:inline-block">
       Start Build App
-    </x-button-secondary>
+    </x-button-secondary> --}}
 
     <x-hamburger-menu class="block lg:hidden" />
 
