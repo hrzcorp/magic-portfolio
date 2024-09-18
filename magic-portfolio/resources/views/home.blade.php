@@ -11,12 +11,14 @@
                     <p class="mb-12 text-lg font-normal xl:leading-8 lg:text-xl max-w-[486px]">
                         Providing comprehensive website and software solutions for your business needs.
                     </p>
-                    <x-button-secondary class="flex gap-[10px]">
-                        Contact Us and Start Build App!
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.3 17.275C13.1 17.075 13.004 16.8334 13.012 16.55C13.02 16.2667 13.1243 16.025 13.325 15.825L16.15 13H5C4.71667 13 4.479 12.904 4.287 12.712C4.095 12.52 3.99934 12.2827 4 12C4 11.7167 4.096 11.479 4.288 11.287C4.48 11.095 4.71734 10.9994 5 11H16.15L13.3 8.15005C13.1 7.95005 13 7.71238 13 7.43705C13 7.16172 13.1 6.92438 13.3 6.72505C13.5 6.52505 13.7377 6.42505 14.013 6.42505C14.2883 6.42505 14.5257 6.52505 14.725 6.72505L19.3 11.3C19.4 11.4 19.471 11.5084 19.513 11.625C19.555 11.7417 19.5757 11.8667 19.575 12C19.575 12.1334 19.554 12.2584 19.512 12.375C19.47 12.4917 19.3993 12.6 19.3 12.7L14.7 17.3C14.5167 17.4834 14.2877 17.575 14.013 17.575C13.7383 17.575 13.5007 17.475 13.3 17.275Z" fill="#373BD7"/>
-                        </svg>                            
-                    </x-button-secondary>
+                    <a href="#contact-us" id="scroll-link">
+                        <x-button-secondary class="flex gap-[10px]">
+                            Contact Us and Start Build App!
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3 17.275C13.1 17.075 13.004 16.8334 13.012 16.55C13.02 16.2667 13.1243 16.025 13.325 15.825L16.15 13H5C4.71667 13 4.479 12.904 4.287 12.712C4.095 12.52 3.99934 12.2827 4 12C4 11.7167 4.096 11.479 4.288 11.287C4.48 11.095 4.71734 10.9994 5 11H16.15L13.3 8.15005C13.1 7.95005 13 7.71238 13 7.43705C13 7.16172 13.1 6.92438 13.3 6.72505C13.5 6.52505 13.7377 6.42505 14.013 6.42505C14.2883 6.42505 14.5257 6.52505 14.725 6.72505L19.3 11.3C19.4 11.4 19.471 11.5084 19.513 11.625C19.555 11.7417 19.5757 11.8667 19.575 12C19.575 12.1334 19.554 12.2584 19.512 12.375C19.47 12.4917 19.3993 12.6 19.3 12.7L14.7 17.3C14.5167 17.4834 14.2877 17.575 14.013 17.575C13.7383 17.575 13.5007 17.475 13.3 17.275Z" fill="#373BD7"/>
+                            </svg>                            
+                        </x-button-secondary>
+                    </a>
                 </div>
                 <div class="flex justify-end flex-1">
                     <img src="images/hero-images.png" alt="Interaction Image" class="h-auto">
@@ -139,7 +141,7 @@
         </div>
     </section>
 
-    <section class="relative -mt-32 bg-[#373BD7] text-white px-6 rounded-b-3xl lg:rounded-b-[120px]">
+    <section class="relative -mt-32 bg-[#373BD7] text-white px-6 rounded-b-3xl lg:rounded-b-[120px]" id="contact-us">
         <div class="container flex pt-56 pb-32 flex-col lg:flex-row justify-between items-center">
           <div class="mb-8 max-w-[482px]">
             <h2 class="text-xl font-medium">Contact us</h2>
@@ -164,15 +166,16 @@
           </div>
       
           <div class="md:w-[428px] w-full text-black">
-            <form>
+            <form action="/send-registration-form" method="POST">
+              @csrf
               <div class="mb-5">
-                <input id="name" type="text" placeholder="Your Name" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                <input id="name" type="text" placeholder="Your Name" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
               </div>
               <div class="mb-5">
-                <input id="email" type="email" placeholder="me@user.com" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                <input id="email" type="email" placeholder="me@user.com" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
               </div>
               <div class="mb-5">
-                <select id="title" placeholder="your title" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <select id="title" placeholder="your title" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                     <option disabled selected>Your Title</option>
                     <option>Mr</option>
                     <option>Mrs</option>
@@ -181,7 +184,7 @@
                 </select>
               </div>
               <div class="mb-5">
-                <textarea id="message" placeholder="Message" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 h-24"></textarea>
+                <textarea id="message" placeholder="Message" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 h-24" required></textarea>
               </div>
               <button type="submit" class="w-full flex items-center gap-4 justify-center bg-[#3FB7BC] text-white font-bold py-2 md:py-4 px-4 md:px-6 rounded-xl hover:from-teal-500 hover:to-blue-700 transition-all duration-300">
                 Send
@@ -264,6 +267,16 @@
                 1024: {
                     items: 3,
                 }
+            }
+        });
+
+        document.getElementById('scroll-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const targetElement = document.querySelector('#contact-us');
+            if (targetElement) {
+                targetElement.scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
             }
         });
     });

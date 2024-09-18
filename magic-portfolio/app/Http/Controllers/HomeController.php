@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+use App\Models\CandidateClient;
 
 class HomeController extends Controller implements HasMiddleware
 {
@@ -147,6 +147,26 @@ class HomeController extends Controller implements HasMiddleware
         ];
 
         return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'One Stop Software Solutions');
+    }
 
+    public function sendRegistrationForm(Request $request)
+    {
+        // add process to save user and message to database
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'title' => 'required|string',
+            'message' => 'required|string'
+        ]);
+
+        $candidateClient = new CandidateClient();
+        $candidateClient->name = $validatedData['name'];
+        $candidateClient->email = $validatedData['email'];
+        $candidateClient->title = $validatedData['title'];
+        $candidateClient->message = $validatedData['message'];
+        $candidateClient->save();
+
+        $message = ""; // to be add
+        return redirect('https://wa.me/6285735868483');
     }
 }
