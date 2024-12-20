@@ -4,7 +4,7 @@
     <section class="relative bg-[#373BD7] text-white overflow-hidden border-0 rounded-b-3xl lg:rounded-b-[120px]">
         <div class="container px-6 py-12 lg:px-0 lg:pt-6 pb-12 lg:pb-12">
             <div class="flex flex-col items-center gap-12 lg:flex-row">
-                <div class="flex-1">
+                <div class="flex-1 justify-items-center">
                     <h1 class="mb-8 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
                         Welcome to HRZ Indonesia!
                     </h1>
@@ -20,9 +20,9 @@
                         </x-button-secondary>
                     </a>
                 </div>
-                <div class="flex justify-end flex-1">
+                <!-- <div class="flex justify-end flex-1">
                     <img src="images/hero-images.png" alt="Interaction Image" class="h-auto">
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -30,8 +30,8 @@
     {{-- <x-sponsor/> --}}
 
     <section class="container px-6 pb-24 mt-6 relative overflow-hidden border-0">
-        <div class="flex flex-col items-center lg:gap-[104px] gap-12 lg:flex-row">
-            <div class="max-w-[483px] pt-14">
+        <div class="flex flex-col items-center lg:flex-row">
+            <div class="max-w-[1200px] pt-14 text-center">
                 <h1 class="mb-6 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
                     Who are we and what we do
                 </h1>
@@ -41,10 +41,10 @@
             </div>
             <div>
                 <div class="lg:absolute top-0 right-0 h-auto z-0">
-                    <img src="images/decor-blue.png" alt="Interaction Image">
+                    <!-- <img src="images/decor-blue.png" alt="Interaction Image"> -->
                 </div>
                 <div class="flex justify-center hp:justify-end bottom-2 xl:right-64 lg:z-10 hp:absolute">
-                    <x-chart/>
+                    <!-- <x-chart/> -->
                 </div>
             </div>
         </div>

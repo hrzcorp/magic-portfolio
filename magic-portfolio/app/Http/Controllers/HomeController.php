@@ -20,10 +20,7 @@ class HomeController extends Controller implements HasMiddleware
     public function index()
     {
         $navItems = [
-            ['name' => 'Demos', 'url' => '#'],
             ['name' => 'About', 'url' => '#'],
-            ['name' => 'Blog', 'url' => '#'],
-            ['name' => 'Pages', 'url' => '#'],
             ['name' => 'Contact', 'url' => '#'],
         ];
 
@@ -31,8 +28,6 @@ class HomeController extends Controller implements HasMiddleware
             'Company' => [
                 ['name' => 'Home', 'url' => '#'],
                 ['name' => 'About', 'url' => '#'],
-                ['name' => 'Blog', 'url' => '#'],
-                ['name' => 'Pages', 'url' => '#'],
                 ['name' => 'Contact', 'url' => '#']
             ],
             'Help' => [
@@ -77,71 +72,87 @@ class HomeController extends Controller implements HasMiddleware
             [
                 'name' => 'John Petrus',
                 'username' => '@johnpetrus',
-                'profileImage' => 'images/photo-profil-1.png',
+                'profileImage' => '',
                 'message' => 'When it comes to app development, HRZ Indonesia is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional app within a short timeframe.',
                 'timestamp' => '23 April • 8:13 AM'
+            ],
+            [
+                'name' => 'Sandy',
+                'username' => '@sandy',
+                'profileImage' => '',
+                'message' => 'HRZ Indonesia has been an absolute pleasure to work with. Their expertise in app development is unmatched, and they consistently deliver high-quality results. I highly recommend them to anyone looking for a reliable and professional app development partner.',
+                'timestamp' => '15 February • 9:15 AM'
+            ],
+            [
+                'name' => 'Michael',
+                'username' => '@michael',
+                'profileImage' => '',
+                'message' => 'HRZ Indonesia exceeded my expectations in every way possible. Their attention to detail, creativity, and technical skills are top-notch. They truly care about their clients and go above and beyond to ensure satisfaction. I couldn’t have asked for a better app development experience.',
+                'timestamp' => '1 August • 10:15 AM'
             ],
         ];
 
         $workfolios = [
             [
                 'url' => '#',
-                'title' => 'Indosat Ooredo',
-                'image' => 'images/porto-1.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Saas Landing Page',
+                'image' => 'images/ecommerce.png',
+                'description' => 'Saas using laravel framework and tailwind',
                 'tag' => [
-                    'laravel', 
-                    'developer'
+                    'tailwind',
+                    'laravel'
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Pharmachy Organization',
-                'image' => 'images/porto-2.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Travel Agency App',
+                'image' => 'images/travel.png',
+                'description' => 'Robust web applications. Using advance payment gateway and affiliate system.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'php', 
+                    'bootstrap',
+                    'laravel',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Tech Insurance',
-                'image' => 'images/porto-3.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Machine Learning Solution',
+                'image' => 'images/machine-learning.webp',
+                'description' => 'Machine learning solution for data analysis.',
                 'tag' => [
-                    'laravel', 
-                    'nodejs'
+                    'python', 
+                    'sklearn',
+                    'tensorflow',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Indosat Ooredo',
-                'image' => 'images/porto-1.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Household App',
+                'image' => 'images/household.png',
+                'description' => 'Household management application.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'python', 
+                    'django'
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Pharmachy Organization',
-                'image' => 'images/porto-2.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Web Scraping Application',
+                'image' => 'images/web-scrap.png',
+                'description' => 'Web scraping application using python.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'python', 
+                    'selenium',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Tech Insurance',
-                'image' => 'images/porto-3.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => '.Net Core Web API',
+                'image' => 'images/dotnet.png',
+                'description' => '.Net core web api for mobile application.',
                 'tag' => [
-                    'laravel', 
-                    'nodejs'
+                    'C#', 
+                    '.NET',
                 ]
             ],
         ];
