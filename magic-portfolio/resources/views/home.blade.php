@@ -1,6 +1,18 @@
 <x-layouts-app :title="$title">
     <x-navbar :navItems="$navItems" />
 
+    @if (session('success'))
+    <div id="flash-message" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-3 rounded shadow-lg transition-opacity duration-300 ease-in-out">
+        <p>{{ session('success') }}</p>
+    </div>
+    @endif
+
+    @if (session('error'))
+    <div id="flash-message" class="fixed top-4 right-4 bg-red-500 text-white px-4 py-3 rounded shadow-lg transition-opacity duration-300 ease-in-out">
+        <p>{{ session('error') }}</p>
+    </div>
+    @endif
+
     <section class="relative bg-[#373BD7] text-white overflow-hidden border-0 rounded-b-3xl lg:rounded-b-[120px]">
         <div class="container px-6 py-12 lg:px-0 lg:pt-6 pb-12 lg:pb-12">
             <div class="flex flex-col items-center gap-12 lg:flex-row">
@@ -170,21 +182,16 @@
           </div>
       
           <div class="md:w-[428px] w-full text-black">
-            @if (session('success'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                    <span class="block sm:inline">{{ session('success') }}</span>
-                </div>
-            @endif
             <form action="/send-registration-form" method="POST">
               @csrf
               <div class="mb-5">
-                <input id="name" type="text" placeholder="Your Name" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
+                <input id="name" name="name" type="text" placeholder="Your Name" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
               </div>
               <div class="mb-5">
-                <input id="email" type="email" placeholder="me@user.com" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
+                <input id="email" name="email" type="email" placeholder="me@user.com" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
               </div>
               <div class="mb-5">
-                <select id="title" placeholder="your title" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                <select id="title" name="title" placeholder="your title" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                     <option disabled selected>Your Title</option>
                     <option>Mr</option>
                     <option>Mrs</option>
@@ -193,7 +200,7 @@
                 </select>
               </div>
               <div class="mb-5">
-                <textarea id="message" placeholder="Message" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 h-24" required></textarea>
+                <textarea id="message" name="message" placeholder="Message" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 h-24" required></textarea>
               </div>
               <button type="submit" class="w-full flex items-center gap-4 justify-center bg-[#3FB7BC] text-white font-bold py-2 md:py-4 px-4 md:px-6 rounded-xl hover:from-teal-500 hover:to-blue-700 transition-all duration-300">
                 Send
@@ -256,6 +263,15 @@
                 }
             }
         });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const flashMessage = document.getElementById('flash-message');
+        if (flashMessage) {
+            setTimeout(() => {
+                flashMessage.classList.add('opacity-0'); // Fade out
+                setTimeout(() => flashMessage.remove(), 300); // Remove from DOM after fade out
+            }, 5000); // Show for 3 seconds
+        }
     });
     </script>
 

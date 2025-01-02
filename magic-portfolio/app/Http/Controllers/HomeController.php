@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use App\Models\CandidateClient;
+use App\Services\TelegramService;
 
 class HomeController extends Controller implements HasMiddleware
 {
+    protected $telegram;
+
+    public function __construct(TelegramService $telegram)
+    {
+        $this->telegram = $telegram;
+    }
+
     public static function middleware(): array
     {
         return [
@@ -20,24 +28,23 @@ class HomeController extends Controller implements HasMiddleware
     public function index()
     {
         $navItems = [
-            ['name' => 'About', 'url' => '#'],
-            ['name' => 'Contact', 'url' => '#'],
+            ['name' => 'About', 'url' => '#about'],
+            ['name' => 'Contact', 'url' => '#contact-us'],
         ];
+
+        $customerMessage = "Hi HRZ Indonesia! I am interested in working with you. Please contact me for further discussion. Thank you.";
+        $customerMessage = rawurlencode($customerMessage);
+        $customerMessageLink = "https://wa.me/6285735868483?text=".$customerMessage;
 
         $footerNavItems = [
             'Company' => [
                 ['name' => 'Home', 'url' => '#'],
-                ['name' => 'About', 'url' => '#'],
-                ['name' => 'Contact', 'url' => '#']
+                ['name' => 'About', 'url' => '#about'],
+                ['name' => 'Contact', 'url' => '#contact-us']
             ],
             'Help' => [
-                ['name' => 'FAQ', 'url' => '#'],
-                ['name' => 'Customer Support', 'url' => '#']
+                ['name' => 'Customer Support', 'url' => $customerMessageLink]
             ],
-            'Resources' => [
-                ['name' => 'Terms & Conditions', 'url' => '#'],
-                ['name' => 'Privacy Policy', 'url' => '#'],
-            ]
         ];
 
         $benefits = [
@@ -72,21 +79,21 @@ class HomeController extends Controller implements HasMiddleware
             [
                 'name' => 'John Petrus',
                 'username' => '@johnpetrus',
-                'profileImage' => '',
+                'profileImage' => 'images/black.png',
                 'message' => 'When it comes to app development, HRZ Indonesia is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional app within a short timeframe.',
                 'timestamp' => '23 April • 8:13 AM'
             ],
             [
                 'name' => 'Sandy',
                 'username' => '@sandy',
-                'profileImage' => '',
+                'profileImage' => 'images/black.png',
                 'message' => 'HRZ Indonesia has been an absolute pleasure to work with. Their expertise in app development is unmatched, and they consistently deliver high-quality results. I highly recommend them to anyone looking for a reliable and professional app development partner.',
                 'timestamp' => '15 February • 9:15 AM'
             ],
             [
                 'name' => 'Michael',
                 'username' => '@michael',
-                'profileImage' => '',
+                'profileImage' => 'images/black.png',
                 'message' => 'HRZ Indonesia exceeded my expectations in every way possible. Their attention to detail, creativity, and technical skills are top-notch. They truly care about their clients and go above and beyond to ensure satisfaction. I couldn’t have asked for a better app development experience.',
                 'timestamp' => '1 August • 10:15 AM'
             ],
@@ -162,22 +169,30 @@ class HomeController extends Controller implements HasMiddleware
 
     public function sendRegistrationForm(Request $request)
     {
-        // add process to save user and message to database
-        $validatedData = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'title' => 'required|string',
-            'message' => 'required|string'
-        ]);
+        try {
+            // add process to save user and message to database
+            $validatedData = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'title' => 'required|string',
+                'message' => 'required|string'
+            ]);
 
-        $candidateClient = new CandidateClient();
-        $candidateClient->name = $validatedData['name'];
-        $candidateClient->email = $validatedData['email'];
-        $candidateClient->title = $validatedData['title'];
-        $candidateClient->message = $validatedData['message'];
-        $candidateClient->save();
+            $candidateClient = new CandidateClient();
+            $candidateClient->name = $validatedData['name'];
+            $candidateClient->email = $validatedData['email'];
+            $candidateClient->title = $validatedData['title'];
+            $candidateClient->message = $validatedData['message'];
+            $candidateClient->save();
+            
+            $customerMessage = "Thank you ".$validatedData['name']." for contacting us! We will get back to you soon, have a nice day!";
+            $inquiryMessage = "New inquiry from ".$validatedData['name']." with email ".$validatedData['email'].". Title: ".$validatedData['title'].". Message: ".$validatedData['message'];
+            $this->telegram->sendMessage($inquiryMessage);
 
-        $message = ""; // to be add
-        return redirect('https://wa.me/6285735868483');
+            return redirect()->back()->with('success', $customerMessage);
+        } catch (\Throwable $th) {
+            logger()->error($th);
+            return redirect()->back()->with('error', 'Something went wrong, please try again.');
+        }
     }
 }
