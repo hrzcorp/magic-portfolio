@@ -42,7 +42,7 @@
     {{-- <x-sponsor/> --}}
 
     <section class="container px-6 pb-24 mt-6 relative overflow-hidden border-0" id="about">
-        <div class="flex flex-col items-center lg:flex-row">
+        <div class="flex flex-col items-center lg:flex-row justify-center">
             <div class="max-w-[1200px] pt-14 text-center">
                 <h1 class="mb-6 text-4xl font-bold tracking-tight xl:leading-[4.5rem] font-satoshi lg:text-5xl xl:text-6xl">
                     Who are we and what we do
