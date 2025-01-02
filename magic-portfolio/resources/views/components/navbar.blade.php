@@ -20,7 +20,7 @@
 
     <div class="navbar-menu hidden fixed z-50 inset-0 bg-gray-800 bg-opacity-25">
       <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-      <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-[#373BD7] border-r overflow-y-auto">
+      <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-[#373BD7] overflow-y-auto">
         <div class="flex items-center justify-between mb-8">
           <div class="pb-4">
             <x-logo color="white"/>
