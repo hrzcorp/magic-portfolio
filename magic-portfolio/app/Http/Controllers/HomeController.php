@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+use App\Models\CandidateClient;
+use App\Services\TelegramService;
 
 class HomeController extends Controller implements HasMiddleware
 {
+    protected $telegram;
+
+    public function __construct(TelegramService $telegram)
+    {
+        $this->telegram = $telegram;
+    }
+
     public static function middleware(): array
     {
         return [
@@ -20,198 +28,171 @@ class HomeController extends Controller implements HasMiddleware
     public function index()
     {
         $navItems = [
-            ['name' => 'Demos', 'url' => '#'],
-            ['name' => 'About', 'url' => '#'],
-            ['name' => 'Blog', 'url' => '#'],
-            ['name' => 'Pages', 'url' => '#'],
-            ['name' => 'Contact', 'url' => '#'],
+            ['name' => 'About', 'url' => '#about'],
+            ['name' => 'Contact', 'url' => '#contact-us'],
         ];
+
+        $customerMessage = "Hi HRZ Indonesia! I am interested in working with you. Please contact me for further discussion. Thank you.";
+        $customerMessage = rawurlencode($customerMessage);
+        $customerMessageLink = "https://wa.me/6285735868483?text=".$customerMessage;
 
         $footerNavItems = [
             'Company' => [
                 ['name' => 'Home', 'url' => '#'],
-                ['name' => 'About', 'url' => '#'],
-                ['name' => 'Blog', 'url' => '#'],
-                ['name' => 'Pages', 'url' => '#'],
-                ['name' => 'Contact', 'url' => '#']
+                ['name' => 'About', 'url' => '#about'],
+                ['name' => 'Contact', 'url' => '#contact-us']
             ],
             'Help' => [
-                ['name' => 'Terms & Conditions', 'url' => '#'],
-                ['name' => 'Privacy Policy', 'url' => '#'],
-                ['name' => 'Customer Support', 'url' => '#']
+                ['name' => 'Customer Support', 'url' => $customerMessageLink]
             ],
-            'Resources' => [
-                ['name' => 'Terms & Conditions', 'url' => '#'],
-                ['name' => 'Privacy Policy', 'url' => '#'],
-                ['name' => 'Customer Support', 'url' => '#']
-            ]
         ];
 
         $benefits = [
             [
                 'logo' => 'images/images-1.png',
-                'text' => 'Full responsibility for the whole recruitment process'
+                'text' => 'We will dive deep and research to customize the app as per your needs'
             ],
             [
                 'logo' => 'images/images-4.png',
-                'text' => 'Success fee - we will not charge you until you hire'
+                'text' => 'Free consultation - we will not charge you until app development start'
             ],
             [
                 'logo' => 'images/images-2.png',
-                'text' => 'We ensure transparancy at all stages of recruitment'
+                'text' => 'We ensure transparancy at all stages of development'
             ],
             [
                 'logo' => 'images/images-5.png',
-                'text' => 'We will adapt the cooperation model'
+                'text' => 'On-time delivery of your project and support after launch'
             ],
             [
                 'logo' => 'images/images-3.png',
-                'text' => 'Full responsibility for the whole recruitment process'
+                'text' => 'Full responsibility for the whole development process'
             ],
             [
                 'logo' => 'images/images-6.png',
-                'text' => 'Full responsibility for the whole recruitment process'
+                'text' => 'We work with the certified developers'
             ],
 
         ];
 
         $testimonials = [
             [
-                'name' => 'Marjorie',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
+                'name' => 'John Petrus',
+                'username' => '@johnpetrus',
+                'profileImage' => 'images/black.png',
+                'message' => 'When it comes to app development, HRZ Indonesia is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional app within a short timeframe.',
                 'timestamp' => '23 April • 8:13 AM'
             ],
             [
-                'name' => 'Albert Flores',
-                'username' => '@Albertflores',
-                'profileImage' => 'images/photo-profil-2.png',
-                'message' => 'Working with AllHire was a game-changer for our organization. Their professionalism and expertise made the recruitment process seamless and efficient. We found our ideal candidate thanks to their exceptional service.',
-                'timestamp' => '23 April • 8:13 AM'
+                'name' => 'Sandy',
+                'username' => '@sandy',
+                'profileImage' => 'images/black.png',
+                'message' => 'HRZ Indonesia has been an absolute pleasure to work with. Their expertise in app development is unmatched, and they consistently deliver high-quality results. I highly recommend them to anyone looking for a reliable and professional app development partner.',
+                'timestamp' => '15 February • 9:15 AM'
             ],
             [
-                'name' => 'C',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, ',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'D',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'E',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'F',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'G',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'H',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'I',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
-            ],
-            [
-                'name' => 'J',
-                'username' => '@monstermash',
-                'profileImage' => 'images/photo-profil-1.png',
-                'message' => 'When it comes to recruitment, [Recruitment Company] is the best in the business. Their team is incredibly knowledgeable, responsive, and proactive. They took the time to understand our unique requirements and delivered exceptional candidates within a short timeframe.',
-                'timestamp' => '23 April • 8:13 AM'
+                'name' => 'Michael',
+                'username' => '@michael',
+                'profileImage' => 'images/black.png',
+                'message' => 'HRZ Indonesia exceeded my expectations in every way possible. Their attention to detail, creativity, and technical skills are top-notch. They truly care about their clients and go above and beyond to ensure satisfaction. I couldn’t have asked for a better app development experience.',
+                'timestamp' => '1 August • 10:15 AM'
             ],
         ];
 
         $workfolios = [
             [
                 'url' => '#',
-                'title' => 'Indosat Ooredo',
-                'image' => 'images/porto-1.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Saas Landing Page',
+                'image' => 'images/ecommerce.png',
+                'description' => 'Saas using laravel framework and tailwind',
                 'tag' => [
-                    'laravel', 
-                    'developer'
+                    'tailwind',
+                    'laravel'
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Pharmachy Organization',
-                'image' => 'images/porto-2.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Travel Agency App',
+                'image' => 'images/travel.png',
+                'description' => 'Robust web applications. Using advance payment gateway and affiliate system.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'php', 
+                    'bootstrap',
+                    'laravel',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Tech Insurance',
-                'image' => 'images/porto-3.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Machine Learning Solution',
+                'image' => 'images/machine-learning.webp',
+                'description' => 'Machine learning solution for data analysis.',
                 'tag' => [
-                    'laravel', 
-                    'nodejs'
+                    'python', 
+                    'sklearn',
+                    'tensorflow',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Indosat Ooredo',
-                'image' => 'images/porto-1.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Household App',
+                'image' => 'images/household.png',
+                'description' => 'Household management application.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'python', 
+                    'django'
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Pharmachy Organization',
-                'image' => 'images/porto-2.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => 'Web Scraping Application',
+                'image' => 'images/web-scrap.png',
+                'description' => 'Web scraping application using python.',
                 'tag' => [
-                    'fullstack', 
-                    'developer'
+                    'python', 
+                    'selenium',
                 ]
             ],
             [
                 'url' => '#',
-                'title' => 'Tech Insurance',
-                'image' => 'images/porto-3.png',
-                'description' => 'Passionate about building robust web applications.',
+                'title' => '.Net Core Web API',
+                'image' => 'images/dotnet.png',
+                'description' => '.Net core web api for mobile application.',
                 'tag' => [
-                    'laravel', 
-                    'nodejs'
+                    'C#', 
+                    '.NET',
                 ]
             ],
         ];
 
-        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'HOME');
+        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'One Stop Software Solutions');
+    }
 
+    public function sendRegistrationForm(Request $request)
+    {
+        try {
+            // add process to save user and message to database
+            $validatedData = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'title' => 'required|string',
+                'message' => 'required|string'
+            ]);
+
+            $candidateClient = new CandidateClient();
+            $candidateClient->name = $validatedData['name'];
+            $candidateClient->email = $validatedData['email'];
+            $candidateClient->title = $validatedData['title'];
+            $candidateClient->message = $validatedData['message'];
+            $candidateClient->save();
+            
+            $customerMessage = "Thank you ".$validatedData['name']." for contacting us! We will get back to you soon, have a nice day!";
+            $inquiryMessage = "New inquiry from ".$validatedData['name']." with email ".$validatedData['email'].". Title: ".$validatedData['title'].". Message: ".$validatedData['message'];
+            $this->telegram->sendMessage($inquiryMessage);
+
+            return redirect()->back()->with('success', $customerMessage);
+        } catch (\Throwable $th) {
+            logger()->error($th);
+            return redirect()->back()->with('error', 'Something went wrong, please try again.');
+        }
     }
 }
