@@ -162,7 +162,7 @@
                 Contact us today to discuss your project and <br>See how we can help!
             </p>
             <div class="hp:flex items-center justify-between">
-              <a href="tel:+6285735868483">
+              <a href="https://wa.me/+6285735868483?text=Hello%20HRZ%20Indonesia!" target="_blank">
                 <p class="flex items-center gap-[14px] text-sm md:text-base">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.2638 16.7644L16.2371 13.1032C16.0467 12.9302 15.7966 12.8379 15.5395 12.8459C15.2824 12.8538 15.0384 12.9614 14.8591 13.1458L12.4886 15.5836C11.9181 15.4747 10.7709 15.1171 9.59015 13.9393C8.40936 12.7575 8.05175 11.6074 7.94576 11.0408L10.3816 8.66932C10.5663 8.49015 10.674 8.24616 10.682 7.98899C10.6899 7.73182 10.5975 7.48164 10.4242 7.29141L6.76398 3.26565C6.59066 3.07482 6.34979 2.95907 6.0925 2.94297C5.83522 2.92688 5.58179 3.01172 5.38605 3.17947L3.23646 5.02296C3.06519 5.19484 2.96297 5.4236 2.94918 5.66585C2.93432 5.9135 2.65101 11.7798 7.19984 16.3305C11.1682 20.2979 16.139 20.5881 17.508 20.5881C17.7081 20.5881 17.8309 20.5822 17.8636 20.5802C18.1058 20.5666 18.3345 20.4639 18.5055 20.2919L20.3481 18.1413C20.5165 17.9462 20.6019 17.693 20.5862 17.4357C20.5705 17.1785 20.4548 16.9376 20.2638 16.7644Z" fill="white"/>
@@ -170,12 +170,12 @@
                     +62 857 3586 8483
                 </p>
               </a>
-              <a href="mailto:info@hrzcorp.com">
+              <a href="mailto:hrzcorp.id@gmail.com">
                 <p class="flex items-center gap-[14px] text-sm md:text-base">
                     <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.6031 0.411743H3.2208C2.46025 0.411743 1.73085 0.7313 1.19306 1.30011C0.655276 1.86893 0.353149 2.64041 0.353149 3.44483V13.5551C0.353149 14.3596 0.655276 15.131 1.19306 15.6998C1.73085 16.2687 2.46025 16.5882 3.2208 16.5882H16.6031C17.3637 16.5882 18.0931 16.2687 18.6309 15.6998C19.1687 15.131 19.4708 14.3596 19.4708 13.5551V3.44483C19.4708 2.64041 19.1687 1.86893 18.6309 1.30011C18.0931 0.7313 17.3637 0.411743 16.6031 0.411743ZM15.9627 2.4338L9.91197 7.23619L3.86124 2.4338H15.9627ZM16.6031 14.5662H3.2208C2.96728 14.5662 2.72415 14.4596 2.54489 14.27C2.36562 14.0804 2.26491 13.8233 2.26491 13.5551V3.69759L9.33844 9.3088C9.5039 9.44006 9.70515 9.51101 9.91197 9.51101C10.1188 9.51101 10.32 9.44006 10.4855 9.3088L17.559 3.69759V13.5551C17.559 13.8233 17.4583 14.0804 17.2791 14.27C17.0998 14.4596 16.8567 14.5662 16.6031 14.5662Z" fill="white"/>
                     </svg>                    
-                    info@hrzcorp.com
+                    hrzcorp.id@gmail.com
                 </p>
               </a>
             </div>
@@ -189,6 +189,9 @@
               </div>
               <div class="mb-5">
                 <input id="email" name="email" type="email" placeholder="me@user.com" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
+              </div>
+              <div class="mb-5">
+                <input id="phone" name="phone" type="number" placeholder="Phone Number" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
               </div>
               <div class="mb-5">
                 <select id="title" name="title" placeholder="your title" class="w-full p-2 md:p-5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" required>

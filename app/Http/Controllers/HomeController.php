@@ -175,7 +175,8 @@ class HomeController extends Controller implements HasMiddleware
                 'name' => 'required|string',
                 'email' => 'required|email',
                 'title' => 'required|string',
-                'message' => 'required|string'
+                'message' => 'required|string',
+                'phone' => 'required|numeric'
             ]);
 
             $candidateClient = new CandidateClient();
@@ -183,10 +184,12 @@ class HomeController extends Controller implements HasMiddleware
             $candidateClient->email = $validatedData['email'];
             $candidateClient->title = $validatedData['title'];
             $candidateClient->message = $validatedData['message'];
+            $candidateClient->phonenumber = $validatedData['phone'];
             $candidateClient->save();
             
             $customerMessage = "Thank you ".$validatedData['name']." for contacting us! We will get back to you soon, have a nice day!";
-            $inquiryMessage = "New inquiry from ".$validatedData['name']." with email ".$validatedData['email'].". Title: ".$validatedData['title'].". Message: ".$validatedData['message'];
+            $inquiryMessage = "New inquiry from ".$validatedData['name']." with email ".$validatedData['email']." and Phone Number ".$validatedData['phone'].". Title: ".$validatedData['title'].". Message: ".$validatedData['message'];
+            $inquiryMessage = $inquiryMessage."\n Fast response here https://wa.me/".$validatedData['phone']."?text=";
             $this->telegram->sendMessage($inquiryMessage);
 
             return redirect()->back()->with('success', $customerMessage);

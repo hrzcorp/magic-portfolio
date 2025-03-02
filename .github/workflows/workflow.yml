@@ -22,7 +22,6 @@ jobs:
           extensions: imagick, swoole    
       - name: Prepare The Environment
         run: |
-          cd magic-portfolio
           cp .env.example .env
     #   - name: Create Database
     #     run: |
@@ -30,37 +29,29 @@ jobs:
     #       mysql --user="root" --password="root" -e "CREATE DATABASE \`harizcor_bhirawatour_test\` character set UTF8mb4 collate utf8mb4_bin;"
       - name: Install Composer Dependencies
         run: |
-          cd magic-portfolio
           composer update
           composer install --no-progress --prefer-dist --optimize-autoloader
           php -v
       - name: Install npm Packages
         run: |
-          cd magic-portfolio
           npm ci
       - name: Generate Application Key
         run: |
-          cd magic-portfolio
           php artisan key:generate
       - name: Upgrade Chrome Driver
         run: |
-          cd magic-portfolio
           php artisan dusk:chrome-driver --detect
       - name: Start Chrome Driver
         run: |
-          cd magic-portfolio
           ./vendor/laravel/dusk/bin/chromedriver-linux --port=9515 &
       - name: Run Laravel Server
         run: |
-          cd magic-portfolio
           php artisan serve --no-reload &
       - name: Run npm
         run: |
-          cd magic-portfolio
           LARAVEL_BYPASS_ENV_CHECK=1 npm run dev &
       - name: Run Dusk Tests
         run: |
-          cd magic-portfolio
           php artisan dusk
       - name: Upload Screenshots
         if: failure()
