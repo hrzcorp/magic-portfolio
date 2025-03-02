@@ -27,6 +27,7 @@ class HomeController extends Controller implements HasMiddleware
 
     public function index()
     {
+        $title = "One Stop IT Solutions for Software, Automation & Cloud";
         $navItems = [
             ['name' => 'About', 'url' => '#about'],
             ['name' => 'Contact', 'url' => '#contact-us'],
@@ -164,7 +165,7 @@ class HomeController extends Controller implements HasMiddleware
             ],
         ];
 
-        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', 'One Stop Software Solutions');
+        return view('home', compact('navItems', 'footerNavItems','benefits', 'testimonials', 'workfolios'))->with('title', $title);
     }
 
     public function sendRegistrationForm(Request $request)
