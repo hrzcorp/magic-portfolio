@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Config;
 
 class TelegramService
 {
@@ -10,7 +11,7 @@ class TelegramService
 
     public function __construct()
     {
-        $this->telegramUrl = 'https://api.telegram.org/bot' . env('TELEGRAM_BOT_TOKEN');
+        $this->telegramUrl = 'https://api.telegram.org/bot' . Config::get('services.telegram.bot_token');
     }
 
     /**
@@ -22,7 +23,7 @@ class TelegramService
     public function sendMessage(string $message): void
     {
         try {
-            $chatId = env('TELEGRAM_CHAT_ID');
+            $chatId = Config::get('services.telegram.chat_id');
 
             Http::post("{$this->telegramUrl}/sendMessage", [
                 'chat_id' => $chatId,
