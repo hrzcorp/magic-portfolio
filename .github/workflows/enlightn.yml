@@ -13,22 +13,32 @@ jobs:
     name: P${{ matrix.php }}
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, json
-          coverage: none
+        - name: Setup PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: ${{ matrix.php }}
+            extensions: dom, curl, libxml, mbstring, zip, json
+            coverage: none
+        - name: Install Composer Dependencies
+          run: |
+                composer update
+                composer install --no-progress --prefer-dist --optimize-autoloader
+                php -v
+        - name: Install npm Packages
+          run: |
+                npm ci
+        - name: Generate Application Key
+          run: |
+                php artisan key:generate
 
-      - name: Run Enlightn Checks and Trigger the Enlightn Bot
-        if: ${{ github.event_name == 'pull_request' }}
-        env:
-          ENLIGHTN_USERNAME: ${{ secrets.ENLIGHTN_USERNAME }}
-          ENLIGHTN_API_TOKEN: ${{ secrets.ENLIGHTN_API_TOKEN }}
-          ENLIGHTN_GITHUB_REPO: ${{ github.repository }}
-        run: |
-          cp .env.example .env
-          php artisan enlightn --ci --report --review --issue=${{ github.event.number }}
+        - name: Run Enlightn Checks and Trigger the Enlightn Bot
+          env:
+            ENLIGHTN_USERNAME: ${{ secrets.ENLIGHTN_USERNAME }}
+            ENLIGHTN_API_TOKEN: ${{ secrets.ENLIGHTN_API_TOKEN }}
+            ENLIGHTN_GITHUB_REPO: ${{ github.repository }}
+          run: |
+                cp .env.example .env
+                php artisan enlightn --ci --report --review --issue=${{ github.event.number }}
